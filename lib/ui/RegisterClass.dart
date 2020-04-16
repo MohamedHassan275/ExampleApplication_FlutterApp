@@ -42,6 +42,7 @@ class RegisterClickLisner extends State<RegisterCliant> {
     return new Scaffold(
         appBar: new AppBar(
           title: new Text('Register Screen'),
+          backgroundColor: Colors.indigo,
           actions: <Widget>[
             new IconButton(
                 icon: new Icon(Icons.more_vert),
@@ -130,16 +131,16 @@ class RegisterClickLisner extends State<RegisterCliant> {
                       child: new RaisedButton(
                         padding: EdgeInsets.all(15.0),
                         color: Colors.red,
-                        onPressed: null,
-                        child: new Text('Login'),
+                        onPressed: ()=> Navigator.of(context).pushNamed('/HomeDetails'),
+                        child: new Text('Register '),
                         textColor: Colors.white70,),
                     ),
                     new Container(
                       child: new RaisedButton(
                         padding: EdgeInsets.all(15.0),
                         color: Colors.indigo,
-                        onPressed: null,
-                        child: new Text('Register'),
+                        onPressed: ()=> Navigator.of(context).pushNamed('/LoginCliant'),
+                        child: new Text('Back To Login'),
                         textColor: Colors.white,),
                     )
 
