@@ -34,6 +34,17 @@ class HomeClickLiser extends State<Home> {
       appBar: new AppBar(
         title: new Text('Example App'),
         backgroundColor: Colors.indigo,
+        actions: <Widget>[
+//          new IconButton(
+//              icon: new Icon(Icons.airplanemode_active), onPressed: () => debugPrint('air plane')),
+//          new IconButton(
+//              icon: new Icon(Icons.add_a_photo),
+//              onPressed: () => debugPrint('camera')),
+          new IconButton(
+              icon: new Icon(Icons.more_vert),
+              onPressed: () => debugPrint('more')),
+
+        ],
       ),
       body: new Container(
         alignment: Alignment.center,
@@ -41,39 +52,48 @@ class HomeClickLiser extends State<Home> {
         padding: new EdgeInsets.all(22.0),
         child: new Column(
           children: <Widget>[
+            new Image.asset('img/logo.jpg',
+            width: 100.0,height: 100.0,
+            alignment: Alignment.center),
+            new Container(
+              padding: EdgeInsets.all(15.0),
+            ),
             new Text(
-              'Home Screen',
+              'Login in App',
               style: new TextStyle(
                 fontSize: 22,
                 color: Colors.red,
               ),
             ),
-            new Image.asset('img/logo.jpg',
-            width: 100.0,height: 100.0,
-            alignment: Alignment.center),
-            new TextField(
-              autocorrect: true,
-              autofocus: true,
+         new Container(
+           child: new Column(
+             children: <Widget>[
+               new TextField(
+                 autocorrect: true,
+                 autofocus: true,
 
-              decoration: new InputDecoration(
-                icon: new Icon(Icons.account_circle,color: Colors.indigo,),
-                labelText: 'your email',
-                hintText: 'email',
-              ),
-              keyboardType: TextInputType.emailAddress,
-              onChanged: OnChangeValue,
-            ),
-            new TextField(
-              autocorrect: true,
-              autofocus: true,
-              decoration: new InputDecoration(
-                icon: new Icon(Icons.lock,color: Colors.red,),
-                labelText: 'your password',
-                hintText: 'password',
-              ),
-              keyboardType: TextInputType.visiblePassword,
-              onChanged: OnChangeValue,
-            ),
+                 decoration: new InputDecoration(
+                   icon: new Icon(Icons.account_circle,color: Colors.indigo,),
+                   labelText: 'your email',
+                   hintText: 'email',
+                 ),
+                 keyboardType: TextInputType.emailAddress,
+                 onChanged: OnChangeValue,
+               ),
+               new TextField(
+                 autocorrect: true,
+                 autofocus: true,
+                 decoration: new InputDecoration(
+                   icon: new Icon(Icons.lock,color: Colors.blue,),
+                   labelText: 'your password',
+                   hintText: 'password',
+                 ),
+                 keyboardType: TextInputType.visiblePassword,
+                 onChanged: OnChangeValue,
+               ),
+             ],
+           ),
+         ),
 
             new Center(
 
