@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 
     // Initial commit
-class Home extends StatefulWidget {
+class LoginCliant extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -11,7 +11,7 @@ class Home extends StatefulWidget {
   }
 }
 
-class HomeClickLiser extends State<Home> {
+class HomeClickLiser extends State<LoginCliant> {
   String MyName = '';
   String name = '';
 
@@ -32,7 +32,7 @@ class HomeClickLiser extends State<Home> {
     // TODO: implement build
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Example App'),
+        title: new Text('Login Screen'),
         backgroundColor: Colors.indigo,
         actions: <Widget>[
 //          new IconButton(
@@ -105,14 +105,14 @@ class HomeClickLiser extends State<Home> {
                 child:   new RaisedButton(
                       padding: EdgeInsets.all(15.0),
                       color: Colors.indigo,
-                      onPressed: OnClickBtn,
+                      onPressed: ()=> Navigator.of(context).pushNamed('/HomeDetails'),
                       child: new Text('Login'),textColor: Colors.white70,),
                   ),
                   new Container(
                     child:    new RaisedButton(
                       padding: EdgeInsets.all(15.0),
                       color: Colors.red,
-                      onPressed: OnClickBtn,
+                      onPressed: ()=> Navigator.of(context).pushNamed('/RegisterCliant'),
                       child: new Text('Register'),textColor: Colors.white,),
                   )
 
