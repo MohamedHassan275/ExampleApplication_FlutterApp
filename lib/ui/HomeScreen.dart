@@ -1,5 +1,76 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+
+
+class HomeTabBar extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return HomeTabBarClick ();
+  }
+
+
+}
+
+class HomeTabBarClick extends State<HomeTabBar> {
+
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle = TextStyle(
+      fontSize: 15, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: RegisterCliant',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: Home2',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 2: LoginCliant',
+      style: optionStyle,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return  Scaffold(
+      appBar: AppBar(
+        title: const Text('BottomNavigationBar '),
+      ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            title: Text('Business'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            title: Text('School'),
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
+      ),
+    );
+  }
+}
 
 
 class HomeDetails extends StatelessWidget {

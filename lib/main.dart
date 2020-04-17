@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       routes: <String ,WidgetBuilder>{
         '/RegisterCliant': (BuildContext context) => new RegisterCliant(),
         '/LoginCliant' : (BuildContext context) => new LoginCliant(),
-        '/HomeDetails' : (BuildContext context) => new HomeDetails()
+        '/HomeTabBar' : (BuildContext context) => new HomeTabBar()
       },
       home: new LoginCliant(),
 

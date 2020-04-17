@@ -27,6 +27,8 @@ class HomeClickLiser extends State<LoginCliant> {
     });
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -68,29 +70,35 @@ class HomeClickLiser extends State<LoginCliant> {
          new Container(
            child: new Column(
              children: <Widget>[
-               new TextField(
-                 autocorrect: true,
-                 autofocus: true,
+             new Card(
+               child: new Column(
+                 children: <Widget>[
+                   new TextField(
+                     autocorrect: true,
+                     autofocus: true,
 
-                 decoration: new InputDecoration(
-                   icon: new Icon(Icons.account_circle,color: Colors.indigo,),
-                   labelText: 'your email',
-                   hintText: 'email',
-                 ),
-                 keyboardType: TextInputType.emailAddress,
-                 onChanged: OnChangeValue,
+                     decoration: new InputDecoration(
+                       icon: new Icon(Icons.account_circle,color: Colors.indigo,),
+                       labelText: 'your email',
+                       hintText: 'email',
+                     ),
+                     keyboardType: TextInputType.emailAddress,
+                     onChanged: OnChangeValue,
+                   ),
+                   new TextField(
+                     autocorrect: true,
+                     autofocus: true,
+                     decoration: new InputDecoration(
+                       icon: new Icon(Icons.lock,color: Colors.blue,),
+                       labelText: 'your password',
+                       hintText: 'password',
+                     ),
+                     keyboardType: TextInputType.visiblePassword,
+                     onChanged: OnChangeValue,
+                   ),
+                 ],
                ),
-               new TextField(
-                 autocorrect: true,
-                 autofocus: true,
-                 decoration: new InputDecoration(
-                   icon: new Icon(Icons.lock,color: Colors.blue,),
-                   labelText: 'your password',
-                   hintText: 'password',
-                 ),
-                 keyboardType: TextInputType.visiblePassword,
-                 onChanged: OnChangeValue,
-               ),
+             )
              ],
            ),
          ),
@@ -105,7 +113,7 @@ class HomeClickLiser extends State<LoginCliant> {
                 child:   new RaisedButton(
                       padding: EdgeInsets.all(15.0),
                       color: Colors.indigo,
-                      onPressed: ()=> Navigator.of(context).pushNamed('/HomeDetails'),
+                      onPressed: ()=> Navigator.of(context).pushNamed('/HomeTabBar'),
                       child: new Text('Login'),textColor: Colors.white70,),
                   ),
                   new Container(
