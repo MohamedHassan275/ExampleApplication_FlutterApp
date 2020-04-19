@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 
 
+
     // Initial commit
 class LoginCliant extends StatefulWidget {
   @override
@@ -54,9 +55,19 @@ class HomeClickLiser extends State<LoginCliant> {
         padding: new EdgeInsets.all(22.0),
         child: new Column(
           children: <Widget>[
-            new Image.asset('img/logo.jpg',
-            width: 100.0,height: 100.0,
-            alignment: Alignment.center),
+//            new Image.asset('img/logo.jpg',
+//            width: 100.0,height: 100.0,
+//            alignment: Alignment.center),
+            CircleAvatar(
+              backgroundColor: Colors.indigoAccent,
+              radius: 50.0,
+              child: Icon(
+                Icons.shopping_cart,
+                color: Colors.white,
+                size: 50.0,
+              ),
+            ),
+
             new Container(
               padding: EdgeInsets.all(15.0),
             ),
@@ -70,8 +81,7 @@ class HomeClickLiser extends State<LoginCliant> {
          new Container(
            child: new Column(
              children: <Widget>[
-             new Card(
-               child: new Column(
+               new Column(
                  children: <Widget>[
                    new TextField(
                      autocorrect: true,
@@ -97,7 +107,7 @@ class HomeClickLiser extends State<LoginCliant> {
                      onChanged: OnChangeValue,
                    ),
                  ],
-               ),
+
              )
              ],
            ),
